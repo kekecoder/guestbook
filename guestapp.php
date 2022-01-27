@@ -10,7 +10,7 @@ $guestapp = $query->fetchAll(PDO::FETCH_ASSOC);
 var_dump($guestapp);
 echo "</pre>"; */
 } catch (Exception $e) {
-  //print "An Exception occurred " . $e->getMessage();
+  print "An Exception occurred " . $e->getMessage() . "<br>";
   print "Server is down at this time 😪😪, please try again later";
   exit();
 }

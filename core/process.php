@@ -41,7 +41,7 @@ if(empty($error)){
   header("Location: ../guestapp.php");
     
   } catch (Exception $e) {
-    //print "An Exception has occurred " . $e->getMessage();
+    print "An Exception has occurred " . $e->getMessage() . "<br>";
     print "Server is down at this time 😪😪, please try again later";
     exit();
   }
