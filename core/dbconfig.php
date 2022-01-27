@@ -8,7 +8,7 @@ try {
   $password = $url["pass"];
   $db = substr($url["path"], 1);
 
-    $pdo = new PDO("mysql:host=$server; dbname=$username; charset=utf8mb4;", $db, $password);
+    $pdo = new PDO("mysql:host=$server; dbname=$username; charset=utf8mb4;", $password, $db);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     print "connected successfully";
