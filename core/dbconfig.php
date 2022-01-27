@@ -1,11 +1,11 @@
 <?php
 
 try {
-  $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+  $url = parse_url(getenv("mysql://b442a4f3a7b6b1:f8c1776a@us-cdbr-east-05.cleardb.net/heroku_dc3cd6ea7276ac9?reconnect=true"));
   $server = $url["host"];
   $username = $url["user"];
   $password = $url["pass"];
-  $db = substr($url["path"], true);
+  $db = substr($url["path"], 1);
   //$char = 'charset=utf8mb4';
 
 $pdo = new PDO($server, $username, $password, $db);
