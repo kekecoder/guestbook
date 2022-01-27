@@ -5,7 +5,7 @@ try {
   $server = $url["host"];
   $username = $url["user"];
   $password = $url["pass"];
-  $db = substr($url["path"], 1);
+  $db = substr($url["path"], true);
   //$char = 'charset=utf8mb4';
 
 $pdo = new PDO($server, $username, $password, $db);
