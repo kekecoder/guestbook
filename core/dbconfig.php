@@ -1,12 +1,14 @@
 <?php
 
 try {
-  $server = 'remotemysql.com';
-  $dbname = '6V3DUWFCoy';
-  $user = '6V3DUWFCoy';
-  $pass = 'G4ZOUl2GLh';
+  $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
-    $pdo = new PDO("mysql:host=$server; dbname=$dbname; charset=utf8mb4;", $user, $pass);
+$server = $url["host"];
+$username = $url["user"];
+$password = $url["pass"];
+$db = substr($url["path"], 1);
+
+$pdo = new PDO($server, $username, $password, $db);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     print "connected successfully";
