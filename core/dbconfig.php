@@ -1,5 +1,5 @@
 <?php
-
+ini_set('display_errors', 1);
 try {
   $url = getenv('JAWSDB_MARIA_URL');
 $dbparts = parse_url($url);
