@@ -8,7 +8,7 @@ $hostname = $dbparts['host'];
 $username = $dbparts['user'];
 $password = $dbparts['pass'];
 $database = ltrim($dbparts['path'],'/');
-    $pdo = new PDO("mysql:host=$hostname; dbname=$username;", $database, $password);
+    $pdo = new PDO("mysql:host=$hostname; port=3306; dbname=$database; ", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     print "connected successfully";
